@@ -21,7 +21,13 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="information_textblock" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="85" Width="214"><Run Text="You arrived message from remote device! You can read it"/><Run Language="ru-ru" Text=", "/><Run Text="write your answer"/><Run Language="ru-ru" Text=", "/><Run Text="and click «Send button». Or actually you can close this window.  "/><LineBreak/><Run Text="¯\_(ツ)_/¯"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="information_textblock" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="85" Width="214">
+            <Run 
+                Text="You arrived message from remote device! You can read it, write your answer, and click «Send button». Or actually you can close this window."
+            />
+            <LineBreak/>
+            <Run Text="¯\_(ツ)_/¯"/>
+        </TextBlock>
         <TextBox Grid.Row="1" KeyDown="message_text_box_KeyDown" PreviewKeyDown="message_text_box_PreviewKeyDown"  AcceptsReturn="True" Name="message_text_box" HorizontalAlignment="Center" Margin="0,0,0,0" Text="Default message" TextWrapping="Wrap" VerticalAlignment="Center" Height="215" Width="215"/>
         <Button Grid.Row="2" Name="message_text_send" Content="Send" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Center" Height="35" Width="74" Click="message_text_send_Click"/>
 
