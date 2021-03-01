@@ -4,7 +4,8 @@
 
 With this soft you can control your Windows-machine from your Telegram Bot.
 1. Create your Telegram Bot and copy bot token (see @BotFather on Telegram).
-2. Open Telega RPC, and you will understand what to do next.
+2. Start dialog with your bot
+3. Open Telega RPC, and you will understand what to do next.
 
 
 Commands:
