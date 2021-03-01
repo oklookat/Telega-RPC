@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <bot-token></bot-token>
+  <enable-on-startup>false</enable-on-startup>
+  <in-system-startup>false</in-system-startup>
+</Settings>

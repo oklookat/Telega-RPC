@@ -1,0 +1,35 @@
+﻿<Window x:Class="Telega_RPC.SystemDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Telega_RPC"
+        mc:Ignorable="d"
+        Title="Telega RPC - Dialog" Height="500" Width="500"
+        Topmost="True"
+        Closing="Window_Closing"
+        >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Name="information_textblock" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="85" Width="214">
+            <Run Text="С удаленного устройства пришло сообщение. Вы можете прочитать его, ввести в это же поле свой ответ, и нажать кнопку «Отправить»."/>
+            <Run Text=" "/><LineBreak/><Run Text="Ну или закрыть"/><Run Language="ru-ru" Text=" это"/><Run Text=" окно"/><Run Text=" ¯\_(ツ)_/¯"/>
+            <LineBreak/><Run/>
+        </TextBlock>
+        <TextBox Grid.Row="1" KeyDown="message_text_box_KeyDown" PreviewKeyDown="message_text_box_PreviewKeyDown"  AcceptsReturn="True" Name="message_text_box" HorizontalAlignment="Center" Margin="0,0,0,0" Text="Сообщение" TextWrapping="Wrap" VerticalAlignment="Center" Height="215" Width="215"/>
+        <Button Grid.Row="2" Name="message_text_send" Content="Отправить" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Center" Height="35" Width="74" Click="message_text_send_Click"/>
+
+
+    </Grid>
+
+</Window>
