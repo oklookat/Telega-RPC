@@ -17,6 +17,7 @@ namespace Telega_RPC.Core
 
         public bool securityChecker(long chat_id, string chat_username)
         {
+            LoggingMaster.addToLog("BotFuncs/SECURITY", "SECURITY CHECK STARTED FOR USER @" + chat_username);
             var allowed_users = SettingsWizard.getAllowedUsers();
             foreach(string allowed_user in allowed_users)
             {
@@ -25,6 +26,7 @@ namespace Telega_RPC.Core
                 {
                     if (allowed_user_long == chat_id)
                     {
+                        LoggingMaster.addToLog("BotFuncs/SECURITY", "ACCESS ALLOWED FOR @" + chat_username + " (by chat_id)");
                         return true;
                     }
                 }
@@ -32,27 +34,30 @@ namespace Telega_RPC.Core
                 {
                     if (chat_username.Equals(allowed_user))
                     {
+                        LoggingMaster.addToLog("BotFuncs/SECURITY", "ACCESS ALLOWED FOR @" + chat_username + " (by chat_username)");
                         return true;
                     }
                 }
                 else
                 {
+                    LoggingMaster.addToLog("BotFuncs/SECURITY", "SECURITY WARNING! ACCESS DENIED FOR @" + chat_username);
                     return false;
                 }
             }
+            LoggingMaster.addToLog("BotFuncs/SECURITY", "SECURITY ERROR! WHATS WRONG WITH SETTINGS FILE?");
             return false;
         }
 
         private string directoriesManager(string what_need, long chat_id)
         {
             string exe_path = AppDomain.CurrentDomain.BaseDirectory;
-            string media_path = @"media";
+            string user_files_path = @"userfiles";
             string temp_path = @"\temp";
             string screenshots_path = @"\screenshots";
             string chat_id_path = @"\" + chat_id.ToString();
             if (what_need.Equals("screen"))
             {
-                string temp_screens_path = exe_path + media_path + temp_path + chat_id_path + screenshots_path;
+                string temp_screens_path = exe_path + user_files_path + temp_path + chat_id_path + screenshots_path;
                 try
                 {
                     if (Directory.Exists(temp_screens_path))
@@ -63,7 +68,7 @@ namespace Telega_RPC.Core
                 }
                 catch (Exception e)
                 {
-                    Debug.WriteLine("The process failed: {0}", e.ToString());
+                    LoggingMaster.addToLog("BotFuncs/EXCEPTON", "EXCEPTION FROM directoriesManager (" + e.ToString() + ")");
                 }
                 return temp_screens_path;
             }

@@ -59,7 +59,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <TextBox Grid.Row="0" Grid.Column="0" IsReadOnly="True" Name="bot_logs_textbox" HorizontalAlignment="Center" Margin="0,25,0,0" Text="Logs will be here. Currently dont work." TextWrapping="Wrap" VerticalAlignment="Center" Width="460" Height="300"/>
+                    <TextBox Grid.Row="0" Grid.Column="0" IsReadOnly="True" Name="bot_logs_textbox" HorizontalAlignment="Center" Margin="0,25,0,0" Text="Log:" TextWrapping="Wrap" VerticalAlignment="Center" Width="460" Height="300"/>
                 </Grid>
             </TabItem>
 

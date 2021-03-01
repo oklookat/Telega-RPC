@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Windows.Navigation;
 using System.Windows.Controls;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Telega_RPC
 {
@@ -30,6 +31,7 @@ namespace Telega_RPC
         {
             InitializeComponent();
             mainSettingsRefresh();
+            LoggingMaster.createLogs();
 
             if (!String.IsNullOrEmpty(bot_token_settings))
             {
@@ -45,6 +47,7 @@ namespace Telega_RPC
             {
                 bot_activate_on_system_startup_checkbox.IsChecked = true;
             }
+            LoggingMaster.addToLog("MainWindow", "Init successful!");
         }
 
 
@@ -96,8 +99,17 @@ namespace Telega_RPC
             }
             else
             {
-                BotLogic.bot_init(bot_token_settings);
-                bot_active = true;
+                var result = BotLogic.bot_init(bot_token_settings);
+                if (result == true)
+                {
+                    bot_active = true;
+                    bot_activate_checkbox.IsChecked = true;
+                }
+                else
+                {
+                    bot_active = false;
+                    bot_activate_checkbox.IsChecked = false;
+                }
             }
         }
 
@@ -152,6 +164,16 @@ namespace Telega_RPC
             }
             SettingsWizard.deleteAllowedUsers(user_ids);
             allowedUsersListboxRefresh();
+        }
+
+
+        public static void appendToLogTextbox(string text)
+        {
+            App.Current.Dispatcher.Invoke(delegate
+            {
+                MainWindow mw = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+                mw.bot_logs_textbox.AppendText("\n" + text);
+            });
         }
     }
 }
