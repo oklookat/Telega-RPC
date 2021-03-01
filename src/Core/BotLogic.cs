@@ -25,7 +25,7 @@ namespace Telega_RPC.Core
                 var me = bot.GetMeAsync().Result;
                 bot.OnMessage += Bot_OnMessage;
                 bot.StartReceiving();
-                LoggingMaster.addToLog("BotLogic/INIT", "Bot start receiving messages!");
+                LoggingMaster.addToLog("BotLogic/INIT", "Bot started receiving messages!");
                 return true;
             }
             catch (Exception e)
