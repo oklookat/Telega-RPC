@@ -25,7 +25,7 @@ namespace Telega_RPC.Core
                 var me = bot.GetMeAsync().Result;
                 bot.OnMessage += Bot_OnMessage;
                 bot.StartReceiving();
-                LoggingMaster.addToLog("BotLogic/INFO", "Bot init successful!");
+                LoggingMaster.addToLog("BotLogic/INIT", "Bot start receiving messages!");
                 return true;
             }
             catch (Exception e)
@@ -38,6 +38,7 @@ namespace Telega_RPC.Core
         static public void bot_deactivate()
         {
             bot.StopReceiving();
+            LoggingMaster.addToLog("BotLogic/INIT", "Bot stopped receiving messages!");
         }
 
         static async void Bot_OnMessage(object sender, MessageEventArgs e)
