@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telega RPC", "Telega RPC.csproj", "{A73CDAC7-FD7A-4B44-B268-A654DCA1B452}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telega RPC", "src/Telega RPC.csproj", "{A73CDAC7-FD7A-4B44-B268-A654DCA1B452}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -12,7 +12,7 @@ namespace Telega_RPC.Core
 {
     class BotFuncs
     {
-        [DllImport("/System/OhMyKey.dll", EntryPoint = "EMULATE")]
+        [DllImport("/Lib/OhMyKey.dll", EntryPoint = "EMULATE")]
         public static extern int emulate_key(int key_hex);
 
         public bool securityChecker(long chat_id, string chat_username)
