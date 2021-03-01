@@ -38,7 +38,7 @@
                     <PasswordBox Grid.Row="0" x:Name="bot_token_passwordbox" Width="170" Height="20" ToolTip="bot token" HorizontalAlignment="Left" Margin="45,7,0,0" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
                     <Button  Grid.Row="0" Grid.Column="0" x:Name="bot_token_set_button"  Content="Set" RenderTransformOrigin="0.404,-0.299" Click="bot_token_set_button_Click" Width="50" Height="20" HorizontalAlignment="Left" Margin="220,7,0,0"/>
                     <CheckBox Grid.Row="1" Grid.Column="0" x:Name="bot_activate_on_startup_checkbox" Content="Activate on startup" RenderTransformOrigin="0.66,0.632" Click="bot_activate_on_startup_checkbox_Click" Margin="5,7,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <CheckBox Grid.Row="2"  Grid.Column="0" x:Name="bot_activate_on_system_startup_checkbox" Content="System startup" RenderTransformOrigin="0.66,0.632" Click="bot_activate_on_system_startup_checkbox_Click" Margin="5,7,0,0"/>
+                    <CheckBox Grid.Row="2"  Grid.Column="0" x:Name="bot_activate_on_system_startup_checkbox" Content="System startup (currently dont work)" RenderTransformOrigin="0.66,0.632" Click="bot_activate_on_system_startup_checkbox_Click" Margin="5,7,0,0"/>
 
                     <Label Name="bot_allowed_user_label" Content="Allowed users" HorizontalAlignment="Center" Margin="0,27,0,0" Grid.Row="4" VerticalAlignment="Top"/>
                     <ListBox SelectionMode="Extended" Name="bot_allowed_users_listbox" Grid.Row="4" Margin="0,53,0,0" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Top">
