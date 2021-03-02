@@ -47,7 +47,6 @@ namespace Telega_RPC.Core
             {
                 chat_id = e.Message.Chat.Id;
                 chat_username = e.Message.Chat.Username;
-                LoggingMaster.addToLog("BotLogic/INFO", "RECEIVED MESSAGE FROM @" + chat_username + " (" + e.Message.Text + ")");
                 bool security = bot_funcs.securityChecker(chat_id, chat_username);
                 if (security == true)
                 {

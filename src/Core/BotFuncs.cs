@@ -17,7 +17,6 @@ namespace Telega_RPC.Core
 
         public bool securityChecker(long chat_id, string chat_username)
         {
-            LoggingMaster.addToLog("BotFuncs/SECURITY", "SECURITY CHECK STARTED FOR USER @" + chat_username);
             var allowed_users = SettingsWizard.getAllowedUsers();
             foreach(string allowed_user in allowed_users)
             {

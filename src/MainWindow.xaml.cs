@@ -120,9 +120,6 @@ namespace Telega_RPC
         }
 
 
-
-
-
         private void bot_add_allowed_user_button_Click(object sender, RoutedEventArgs e)
         {
             AllowedUsersAddWindow allowed_users_add_window = new AllowedUsersAddWindow();
