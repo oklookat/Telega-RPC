@@ -1,6 +1,6 @@
 # Telega-RPC
 
-* Development in progress. Some functions may be removed, changed, etc.
+(This is unfinished software, so there may be bugs, errors, and so on. Development stopped.)
 
 With this soft you can control your Windows-machine from your Telegram Bot.
 1. Create your Telegram Bot and copy bot token (see @BotFather on Telegram).
